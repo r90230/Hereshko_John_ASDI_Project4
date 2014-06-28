@@ -45,7 +45,7 @@ var newView = Ti.UI.createScrollView({
 
 var countWindow = Ti.UI.createWindow({
 	backgroundcolor: "#d3d3d3",
-	title: "Inventory Count"
+	title: "Reddit Count"
 });
 
 var countView = Ti.UI.createView({
@@ -61,12 +61,16 @@ var changeView = Ti.UI.createView({
 	backgroundColor: "#003366"
 });
 
-countWindow.add(countView);
+var table = Ti.UI.createTableView({height: 'auto', top: 30});
+
+var redditSection = Ti.UI.createTableViewSection({headerTitle: "Reddit Posts"});
+
+countWindow.add(table, countView);
 changeWindow.add(changeView);
 
 //End Windows and Views
 
-var loadFile = require("reddit");
+var loadFile = require("signup");
 
 newWindow.add(newView);
 navWindow.open();
