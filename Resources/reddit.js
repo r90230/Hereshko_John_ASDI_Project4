@@ -262,7 +262,7 @@ var dbSetup = function(){
 		
 		dbRedditSetup();
 		
-		navWindow.closeWindow(newWindow);
+		newWindow.close();
 };
 
 var dbRedditSetup = function(){
@@ -293,6 +293,10 @@ var dbRedditSetup = function(){
 			var redditScore = redditList.fieldByName("score");		
 			redditList.next();
 		}
+		
+		var tableSection = [redditSection];
+		table.setData(redditList);
+		
 		console.log(redditList.field(title));
 				
 		redditList.close();
